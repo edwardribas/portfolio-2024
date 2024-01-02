@@ -15,6 +15,16 @@ const config = {
     extend: {
       spacing: { scroll: "var(--removed-body-scroll-bar-size)" },
 
+      gridTemplateRows: {
+        'home': 'auto 300px',
+      },
+
+      gridTemplateColumns: {
+        'desktop-portfolio': "1fr 1fr 1fr",
+        'tablet-portfolio': "1fr 1fr",
+        'mobile-portfolio': "1fr",
+      },
+
       screens: {
         "xxsm": "380px",
         "xsm": "450px",

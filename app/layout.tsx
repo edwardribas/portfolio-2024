@@ -5,7 +5,7 @@ import type { ChildrenProps } from '@/types/utils'
 import { cn } from '@/lib/utils'
 import Header from '@/components/header'
 import { ScrollArea } from '@/components/ui/scroll-area'
-import { Fragment } from 'react'
+import Footer from '@/components/footer'
 
 export const metadata: Metadata = {
   title: 'edwardribas',
@@ -22,6 +22,7 @@ export default function RootLayout({
           <div className='w-dvw'>
             <Header />
             {children}
+            <Footer />
           </div>
         </ScrollArea>
       </body>

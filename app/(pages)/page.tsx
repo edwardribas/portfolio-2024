@@ -7,8 +7,8 @@ import Image from "next/image"
 
 const Home = () => {
   return (
-    <Container className="space-y-10">
-      <Card className="space-y-[18px]">
+    <Container className="max-lg:space-y-10 lg:grid lg:grid-cols-8 lg:space-x-8">
+      <Card className="space-y-[18px] lg:col-span-5">
         <div className="inline-flex items-center gap-2.5">
           <Image
             src="https://avatars.githubusercontent.com/u/94547625?v=4"
@@ -46,7 +46,7 @@ const Home = () => {
         />
       </Card>
 
-      <Curiosities />
+      <Curiosities className="lg:col-span-3" />
     </Container>
   )
 }

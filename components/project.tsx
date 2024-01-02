@@ -12,8 +12,8 @@ type ProjectProps = {
 
 const Project = ({ description, title, demoUrl, repositoryUrl, }: ProjectProps) => {
   return (
-    <Card>
-      <div>
+    <Card className="space-y-7">
+      <div className="space-y-[18px]">
         {demoUrl
           ? (
             <Link href={demoUrl} className="text-foreground underline underline-offset-2">
@@ -33,18 +33,22 @@ const Project = ({ description, title, demoUrl, repositoryUrl, }: ProjectProps) 
       </div>
 
       {(demoUrl || repositoryUrl) && (
-        <div>
-          <Button variant="outline" asChild>
-            <Link href={demoUrl ?? '/'} target="_blank">
-              <Eye /> Demo
-            </Link>
-          </Button>
+        <div className="flex gap-3">
+          {demoUrl && (
+            <Button variant="outline" asChild>
+              <Link href={demoUrl ?? '/'} target="_blank">
+                <Eye /> Demo
+              </Link>
+            </Button>
+          )}
 
-          <Button variant="outline" asChild>
-            <Link href={repositoryUrl ?? '/'} target="_blank">
-              <Github /> Github
-            </Link>
-          </Button>
+          {repositoryUrl && (
+            <Button variant="outline" asChild>
+              <Link href={repositoryUrl ?? '/'} target="_blank">
+                <Github /> Github
+              </Link>
+            </Button>
+          )}
         </div>
       )}
     </Card>

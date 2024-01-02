@@ -1,0 +1,11 @@
+{
+  "editor.tabSize": 2,
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "imageClassName",
+    "wrapperClassName",
+    "iconClassName",
+    "logoClassName"
+  ]
+}

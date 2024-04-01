@@ -5,5 +5,3 @@ export type ChildrenProps = {
 export type ClassProps = {
   className?: string
 }
-
-export type ClassChildrenProps = ChildrenProps & ClassProps

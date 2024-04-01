@@ -1,2 +1,3 @@
-export { GeistSans as geistSans } from "geist/font/sans"
-export { GeistMono as geistMono } from "geist/font/mono"
+import { Outfit } from "next/font/google";
+
+export const outfitSans = Outfit({ subsets: ["latin"] });

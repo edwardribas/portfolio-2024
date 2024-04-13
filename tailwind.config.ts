@@ -4,7 +4,11 @@ const config = {
   darkMode: ["class"],
   prefix: "",
 
-  content: ["./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}"],
+  content: [
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./sections/**/*.{ts,tsx}",
+  ],
 
   theme: {
     container: {

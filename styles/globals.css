@@ -80,3 +80,13 @@
 img {
   user-select: none;
 }
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 5px solid #050505;
+  border-radius: 30px;
+  background: #1f1f1f;
+}

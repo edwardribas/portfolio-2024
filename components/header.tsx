@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { LocalTime } from "./local-time"
 
 export const Header = () => {
   return (
@@ -12,13 +13,12 @@ export const Header = () => {
             alt="Símbolo de maleta de trabalho"
           />
 
-          <p className="text-p-foreground text-sm">Tecnologia Única</p>
+          <p className="text-p-foreground text-sm leading-[normal]">
+            Tecnologia Única
+          </p>
         </div>
 
-        <div className="flex items-center gap-5">
-          <p className="text-p-muted-foreground text-sm">Horário local</p>
-          <p className="text-p-foreground text-sm font-bold">10:49 AM</p>
-        </div>
+        <LocalTime />
       </div>
     </header>
   )

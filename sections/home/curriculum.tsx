@@ -15,6 +15,7 @@ export const Curriculum = () => {
             width={24}
             height={24}
             alt="Símbolo de download"
+            className="size-6"
           />
           Baixar currículo
         </Link>

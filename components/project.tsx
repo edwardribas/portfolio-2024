@@ -40,7 +40,7 @@ export const Project = ({
             width={24}
             height={24}
             className={cn(
-              "rotate-0 transition-all duration-300 ease-in-out",
+              "size-6 rotate-0 transition-all duration-300 ease-in-out",
               isDescriptionCollapsed && "rotate-180"
             )}
             alt={
@@ -78,7 +78,7 @@ export const Project = ({
       <Divider />
 
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         src={image}
         alt={title}
         width={347}

@@ -10,6 +10,7 @@ export const LeftBar = () => {
       <nav className="flex flex-col gap-6">
         <MenuLink href="/" tooltip="Início" alt="Acessar página inicial">
           <Image
+            className="size-6"
             src="/icons/solar-round-user-duotone.svg"
             width={24}
             height={24}
@@ -26,6 +27,7 @@ export const LeftBar = () => {
             src="/icons/solar-folder-duotone.svg"
             width={24}
             height={24}
+            className="size-6"
             alt="Simbolo de uma pasta de computador"
           />
         </MenuLink>
@@ -40,6 +42,7 @@ export const LeftBar = () => {
           src="/icons/solar-globe-duotone.svg"
           width={24}
           height={24}
+          className="size-6"
           alt="Simbolo de um globo"
         />
       </Button>

@@ -13,6 +13,7 @@ export const RightBar = () => {
         >
           <Image
             src="/icons/brand-instagram.svg"
+            className="size-6"
             width={24}
             height={24}
             alt="Logo do Instagram"
@@ -27,6 +28,7 @@ export const RightBar = () => {
         >
           <Image
             src="/icons/brand-github.svg"
+            className="size-6"
             width={24}
             height={24}
             alt="Logo do Github"
@@ -42,6 +44,7 @@ export const RightBar = () => {
           <Image
             src="/icons/brand-linkedin.svg"
             width={24}
+            className="size-6"
             height={24}
             alt="Logo do LinkedIn"
           />

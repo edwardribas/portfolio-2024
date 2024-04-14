@@ -8,6 +8,7 @@ export const Introduction = () => {
       <span className="bg-p-muted-border mx-auto grid size-[50px] place-items-center rounded-[22px]">
         <Image
           src="/icons/solar-hand-stars-line-duotone.svg"
+          className="size-6"
           width={24}
           height={24}
           alt="Símbolo de três estrelas sobre uma mão"
@@ -28,6 +29,7 @@ export const Introduction = () => {
         <Link href="mailto:ribasdois@gmail.com">
           <Image
             src="/icons/solar-mailbox-line-duotone.svg"
+            className="size-6"
             width={24}
             height={24}
             alt="Símbolo de caixa postal"

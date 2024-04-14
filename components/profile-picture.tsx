@@ -12,6 +12,7 @@ export const ProfilePicture = ({
       alt="Foto de Eduardo Ribas"
       width={size}
       height={size}
+      priority
       className={cn(
         `size-[${size}px] border-p-muted-border rounded-full border-8`,
         className

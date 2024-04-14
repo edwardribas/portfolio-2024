@@ -10,6 +10,7 @@ export const Header = () => {
             src="/icons/solar-suitcase-line-duotone.svg"
             width={24}
             height={24}
+            className="size-6"
             alt="Símbolo de maleta de trabalho"
           />
 

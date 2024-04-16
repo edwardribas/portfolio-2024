@@ -9,7 +9,11 @@ export const Curriculum = () => {
       <Divider variant="gradient" />
 
       <Button asChild className="-mt-8 self-center">
-        <Link href="/documents/curriculum-ribas.pdf" target="_blank">
+        <Link
+          prefetch={false}
+          href="/documents/curriculum-ribas.pdf"
+          target="_blank"
+        >
           <Image
             src="/icons/solar-cloud-download-line-duotone.svg"
             width={24}

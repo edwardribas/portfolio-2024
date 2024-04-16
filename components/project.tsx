@@ -30,7 +30,7 @@ export const Project = ({
       )}
     >
       <header className="flex w-full items-center justify-between gap-3">
-        <h3 className="font-medium">{title}</h3>
+        <h1 className="font-medium">{title}</h1>
 
         <div className="flex items-center gap-3">
           <h4 className="text-p-muted-foreground text-[15px]">Desde {year}</h4>

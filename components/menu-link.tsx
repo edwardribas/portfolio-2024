@@ -1,8 +1,6 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import { ChildrenProps, OptionalClassProps } from "@/types/utils.types"
-import type { LinkProps } from "next/link"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import {
@@ -11,14 +9,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "./ui/tooltip"
-
-type MenuLink = {
-  tooltip: string
-  tooltipDirection?: "right" | "left"
-  alt: string
-} & LinkProps &
-  ChildrenProps &
-  OptionalClassProps
+import type { MenuLinkProps } from "@/types/components/menu-link.types"
 
 export const MenuLink = ({
   children,
@@ -27,7 +18,7 @@ export const MenuLink = ({
   alt,
   tooltipDirection = "right",
   ...props
-}: MenuLink) => {
+}: MenuLinkProps) => {
   const pathname = usePathname()
   const selected = pathname === props.href
 
@@ -37,8 +28,11 @@ export const MenuLink = ({
         <TooltipTrigger asChild aria-label={alt}>
           <Link
             className={cn(
-              "hover:bg-p-muted-border grid size-[60px] place-items-center rounded-[26px] bg-transparent p-[5px] transition-colors duration-300 ease-in-out",
-              selected && "bg-p-muted-border",
+              " grid size-[60px] place-items-center rounded-[26px] bg-transparent p-[5px] transition-colors duration-300 ease-in-out",
+              {
+                "bg-p-muted-border": selected,
+                "hover:bg-p-muted-border/80": !selected,
+              },
               className
             )}
             {...props}

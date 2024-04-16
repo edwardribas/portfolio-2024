@@ -4,6 +4,7 @@ import { Button } from "./ui/button"
 import Image from "next/image"
 import { OptionalClassProps } from "@/types/utils.types"
 import { cn } from "@/lib/utils"
+import { LanguageSwitch } from "./language-switch"
 
 export const LeftBar = ({ className }: OptionalClassProps) => {
   return (
@@ -40,19 +41,7 @@ export const LeftBar = ({ className }: OptionalClassProps) => {
         </MenuLink>
       </nav>
 
-      <Button
-        className={
-          "hover:bg-p-border border-p-border grid size-[60px] place-items-center rounded-[26px] bg-transparent p-[5px] transition-colors duration-300 ease-in-out"
-        }
-      >
-        <Image
-          src="/icons/solar-globe-duotone.svg"
-          width={24}
-          height={24}
-          className="size-6"
-          alt="Simbolo de um globo"
-        />
-      </Button>
+      <LanguageSwitch />
     </aside>
   )
 }

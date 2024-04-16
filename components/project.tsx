@@ -33,7 +33,7 @@ export const Project = ({
         <h1 className="font-medium">{title}</h1>
 
         <div className="flex items-center gap-3">
-          <h4 className="text-p-muted-foreground text-[15px]">Desde {year}</h4>
+          <p className="text-p-muted-foreground text-[15px]">Desde {year}</p>
 
           <Image
             src="/icons/solar-round-alt-arrow-down-broken.svg"

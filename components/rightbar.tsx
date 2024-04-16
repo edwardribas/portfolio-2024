@@ -1,9 +1,16 @@
 import Image from "next/image"
 import { MenuLink } from "./menu-link"
+import { OptionalClassProps } from "@/types/utils.types"
+import { cn } from "@/lib/utils"
 
-export const RightBar = () => {
+export const RightBar = ({ className }: OptionalClassProps) => {
   return (
-    <aside className="border-p-border sticky top-0 flex h-dvh flex-col items-center justify-center border-l px-5 py-[30px]">
+    <aside
+      className={cn(
+        "border-p-border sticky top-0 flex h-dvh flex-col items-center justify-center border-l px-5 py-[30px]",
+        className
+      )}
+    >
       <nav className="flex flex-col gap-6">
         <MenuLink
           href="https://www.instagram.com/edwardb.as/"

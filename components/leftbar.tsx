@@ -2,10 +2,17 @@ import { ProfilePicture } from "./profile-picture"
 import { MenuLink } from "./menu-link"
 import { Button } from "./ui/button"
 import Image from "next/image"
+import { OptionalClassProps } from "@/types/utils.types"
+import { cn } from "@/lib/utils"
 
-export const LeftBar = () => {
+export const LeftBar = ({ className }: OptionalClassProps) => {
   return (
-    <aside className="border-p-border sticky top-0 flex h-dvh flex-col items-center justify-between border-r px-5 py-[30px]">
+    <aside
+      className={cn(
+        "border-p-border sticky top-0 flex h-dvh flex-col items-center justify-between border-r px-5 py-[30px]",
+        className
+      )}
+    >
       <ProfilePicture size={60} className="border-[5px]" />
       <nav className="flex flex-col gap-6">
         <MenuLink href="/" tooltip="Início" alt="Acessar página inicial">

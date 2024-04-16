@@ -11,8 +11,8 @@ import { RightBar } from "@/components/rightbar"
 // todo: translate metadata
 
 export const metadata: Metadata = {
-  title: "I'm Edward",
-  description: "Be welcome to my portfolio.",
+  title: "Portfólio • Eduardo Ribas",
+  description: "Bem-vindo ao meu portfólio",
 }
 
 export default function RootLayout({
@@ -28,13 +28,13 @@ export default function RootLayout({
           outfitSans.className
         )}
       >
-        <div className="mx-auto flex w-full max-w-[1382px] justify-between">
+        <div className="mx-auto flex w-full max-w-[1382px] justify-center">
           <LeftBar />
 
-          <div>
+          <div className="flex-[2]">
             <Header />
 
-            <main className="mx-auto flex max-w-[860px] flex-col">
+            <main className="mx-auto flex max-w-[980px] flex-col px-[60px]">
               {children}
             </main>
 

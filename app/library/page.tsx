@@ -1,4 +1,5 @@
 import { Divider } from "@/components/divider"
+import { PageAnimation } from "@/components/page-animation"
 import { Introduction } from "@/sections/library/introduction"
 import { Projects } from "@/sections/library/projects"
 import type { Metadata } from "next/types"
@@ -6,17 +7,17 @@ import type { Metadata } from "next/types"
 // todo: translate metadata
 
 export const metadata: Metadata = {
-  title: "Library • I'm Edward",
-  description: "Be welcome to my portfolio.",
+  title: "Biblioteca • Eduardo Ribas",
+  description: "Bem-vindo ao meu portfólio",
 }
 
 const Library = () => {
   return (
-    <div className="space-y-20">
+    <PageAnimation className="space-y-20">
       <Introduction />
-      <Divider />
+      <Divider variant="gradient" />
       <Projects />
-    </div>
+    </PageAnimation>
   )
 }
 

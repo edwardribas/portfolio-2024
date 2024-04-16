@@ -2,6 +2,9 @@ import "@/styles/globals.css"
 import { outfitSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
+
 import type { Metadata } from "next/types"
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
@@ -43,6 +46,9 @@ export default function RootLayout({
 
           <RightBar />
         </div>
+
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   )

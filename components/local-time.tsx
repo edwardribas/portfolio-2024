@@ -25,13 +25,6 @@ export const LocalTime = () => {
   }, [])
 
   return (
-    <div className="flex items-center gap-5">
-      <p className="text-p-muted-foreground text-sm">
-        Horário local (Brasil, SP)
-      </p>
-      <p className="text-p-foreground text-sm font-bold">{localTime}</p>
-    </div>
+    <>{localTime}</>
   )
 }
-
-// todo: translate this page

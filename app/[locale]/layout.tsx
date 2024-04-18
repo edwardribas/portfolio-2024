@@ -10,12 +10,18 @@ import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 import { LeftBar } from "@/components/leftbar"
 import { RightBar } from "@/components/rightbar"
+import { getTranslations } from "next-intl/server"
 
-// todo: translate metadata
+export const generateMetadata = async ({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> => {
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
 
-export const metadata: Metadata = {
-  title: "Portfólio • Eduardo Ribas",
-  description: "Bem-vindo ao meu portfólio",
+  return {
+    title: {
+      default: `${t('layout')} • Eduardo Ribas`,
+      template: "%s • Eduardo Ribas",
+    },
+    description: t('description')
+  };
 }
 
 export default function LocaleLayout({

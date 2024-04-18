@@ -5,15 +5,45 @@
     "download": "Baixar currículo",
     "aboutTitle": "Quem é Eduardo Ribas?",
     "aboutTextParagraph1": "Sou um profissional apaixonado por oferecer experiências acessíveis e funcionais para todos os tipos de usuários, reconhecendo a importância da comunicação no desenvolvimento de produtos. Com mais de 2 anos de experiência, tenho a habilidade de transformar seus protótipos em realidade com o máximo de fidelidade.",
-    "aboutTextParagraph2": "Desde 2022, tenho buscado aprimorar minhas habilidades tanto no design quanto no desenvolvimento. Utilizo frequentemente o Figma para esboçar e replicar designs, e tecnologias como React, NextJS, Tailwind CSS, C#, Prisma ORM, PlanetScale e Cloudinary para tornar esses projetos em realidade."
+    "aboutTextParagraph2": "Desde 2022, tenho buscado aprimorar minhas habilidades tanto no design quanto no desenvolvimento. Utilizo frequentemente o Figma para esboçar e replicar designs, e tecnologias como React, NextJS, Tailwind CSS, C#, Prisma ORM, PlanetScale e Cloudinary para tornar esses projetos em realidade.",
+    "download-icon-alt": "Símbolo de download"
   },
+
   "Library": {
     "title": "Projetos e tecnologias",
     "description": "Atuo majoritariamente utilizando tecnologias como React, NextJS e TailwindCSS. Utilizo o Figma para realizar a prototipação de meus projetos. Torne a sua ideia realidade hoje mesmo!",
-    "buttonContent": "Fale comigo"
+    "buttonContent": "Fale comigo",
+    "heading-icon-alt": "Símbolo de três estrelas sobre uma mão",
+    "mailbox-icon-alt": "Símbolo de uma caixa postal",
+    "contact-button-alt": "Enviar um e-mail para mim"
   },
-  "Sidebars": {
+
+  "Metadata": {
+    "layout": "Portfólio",
     "home": "Início",
-    "library": "Biblioteca"
+    "library": "Biblioteca",
+    "description": "Bem-vindo ao meu portfólio!"
+  },
+
+  "Sidebar": {
+    "home": "Início",
+    "home-alt": "Acessar página inicial",
+    "home-icon-alt": "Símbolo de um usuário",
+    "library": "Biblioteca",
+    "library-alt": "Acessar a biblioteca de projetos",
+    "library-icon-alt": "Simbolo de uma pasta de computador",
+    "locale-alt": "Mudar idioma",
+    "switch-to-pt": "Alterar idioma para português",
+    "switch-to-en": "Alterar idioma para inglês",
+    "global-icon-alt": "Símbolo de um globo"
+  },
+
+  "Footer": {
+    "inspiration": "Inspiração"
+  },
+
+  "Header": {
+    "suitcase-icon-alt": "Símbolo de maleta de trabalho",
+    "time-label": "Horário local (SP, Brasil)"
   }
 }

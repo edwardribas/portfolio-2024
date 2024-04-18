@@ -1,12 +1,14 @@
 import { ProfilePicture } from "./profile-picture"
 import { MenuLink } from "./menu-link"
-import { Button } from "./ui/button"
 import Image from "next/image"
 import { OptionalClassProps } from "@/types/utils.types"
 import { cn } from "@/lib/utils"
 import { LanguageSwitch } from "./language-switch"
+import { useTranslations } from "next-intl"
 
 export const LeftBar = ({ className }: OptionalClassProps) => {
+  const t = useTranslations('Sidebar')
+
   return (
     <aside
       className={cn(
@@ -16,32 +18,37 @@ export const LeftBar = ({ className }: OptionalClassProps) => {
     >
       <ProfilePicture size={60} className="border-[5px]" />
       <nav className="flex flex-col gap-6">
-        <MenuLink href="/" tooltip="Início" alt="Acessar página inicial">
+        <MenuLink href="/" tooltip={t('home')} alt={t('home-alt')}>
           <Image
             className="size-6"
             src="/icons/solar-round-user-duotone.svg"
             width={24}
             height={24}
-            alt="Simbolo de um usuário"
+            alt={t('home-icon-alt')}
           />
         </MenuLink>
 
         <MenuLink
           href="/library"
-          tooltip="Biblioteca"
-          alt="Acessar a biblioteca de projetos"
+          tooltip={t('library')}
+          alt={t('library-alt')}
         >
           <Image
             src="/icons/solar-folder-duotone.svg"
             width={24}
             height={24}
             className="size-6"
-            alt="Simbolo de uma pasta de computador"
+            alt={t('library-icon-alt')}
           />
         </MenuLink>
       </nav>
 
-      <LanguageSwitch />
+      <LanguageSwitch
+        globeAlt={t('global-icon-alt')}
+        languageSwitchButtonAlt={t('locale-alt')}
+        switchToEnglishAlt={t('switch-to-en')}
+        switchToPortugueseAlt={t('switch-to-pt')}
+      />
     </aside>
   )
 }

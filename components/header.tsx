@@ -1,7 +1,10 @@
 import Image from "next/image"
 import { LocalTime } from "./local-time"
+import { useTranslations } from "next-intl"
 
 export const Header = () => {
+  const t = useTranslations('Header')
+
   return (
     <header className="border-p-border mb-[110px] border-b pb-10 pt-[50px] ">
       <div className="mx-auto flex w-full max-w-[980px] items-center justify-between px-[60px]">
@@ -11,7 +14,7 @@ export const Header = () => {
             width={24}
             height={24}
             className="size-6"
-            alt="Símbolo de maleta de trabalho"
+            alt={t('suitcase-icon-alt')}
           />
 
           <p className="text-p-foreground text-sm leading-[normal]">
@@ -19,10 +22,15 @@ export const Header = () => {
           </p>
         </div>
 
-        <LocalTime />
+        <div className="flex items-center gap-5">
+          <p className="text-p-muted-foreground text-sm">
+            {t('time-label')}
+          </p>
+          <p className="text-p-foreground text-sm font-bold">
+            <LocalTime />
+          </p>
+        </div>
       </div>
     </header>
   )
 }
-
-// todo: translate this page

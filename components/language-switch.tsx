@@ -8,8 +8,9 @@ import { LanguageOption } from "./language-option"
 import { cn } from "@/lib/utils"
 import { usePathname, useRouter } from "@/navigation"
 import { useParams } from "next/navigation"
+import { LanguageSwitchProps } from "@/types/components/language-switch.types"
 
-export const LanguageSwitch = () => {
+export const LanguageSwitch = ({ globeAlt, languageSwitchButtonAlt, switchToEnglishAlt, switchToPortugueseAlt, }: LanguageSwitchProps) => {
   const params = useParams()
   const pathname = usePathname()
   const router = useRouter()
@@ -33,14 +34,6 @@ export const LanguageSwitch = () => {
     })
   }
 
-  // useEffect(() => {
-  //   startTransition(() => {
-  //     router.replace(
-  //       pathname
-  //     )
-  //   })
-  // }, [selectedLang])
-
   return (
     <div className="bg-p-background relative flex flex-col">
       <AnimatePresence>
@@ -54,7 +47,7 @@ export const LanguageSwitch = () => {
             <LanguageOption
               disabled={pending}
               active={params.locale === "pt"}
-              alt="Alterar idioma para português"
+              alt={switchToPortugueseAlt}
               label="PT"
               onClick={() => !pending && handleSwitchLanguage("pt")}
             />
@@ -62,7 +55,7 @@ export const LanguageSwitch = () => {
             <LanguageOption
               disabled={pending}
               active={params.locale === "en"}
-              alt="Alterar idioma para inglês"
+              alt={switchToEnglishAlt}
               label="EN"
               onClick={() => !pending && handleSwitchLanguage("en")}
             />
@@ -72,7 +65,7 @@ export const LanguageSwitch = () => {
 
       <Button
         onClick={handleSwitchClick}
-        aria-label="Abrir o menu de seleção de idioma"
+        aria-label={languageSwitchButtonAlt}
         aria-selected={isSwitchOpen}
         className={cn(
           "border-p-border grid size-[60px] place-items-center rounded-[26px] bg-transparent p-[5px] transition-colors duration-300 ease-in-out",
@@ -84,11 +77,9 @@ export const LanguageSwitch = () => {
           width={24}
           height={24}
           className="size-6"
-          alt="Simbolo de um globo"
+          alt={globeAlt}
         />
       </Button>
     </div>
   )
 }
-
-// todo: translate this page

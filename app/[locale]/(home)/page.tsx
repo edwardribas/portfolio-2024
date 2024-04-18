@@ -2,13 +2,16 @@ import { PageAnimation } from "@/components/page-animation"
 import { About } from "@/sections/home/about"
 import { Curriculum } from "@/sections/home/curriculum"
 import { Hero } from "@/sections/home/hero"
+import { getTranslations } from "next-intl/server"
 import type { Metadata } from "next/types"
 
-// todo: translate metadata
+export const generateMetadata = async ({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> => {
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
 
-export const metadata: Metadata = {
-  title: "Início • Eduardo Ribas",
-  description: "Bem-vindo ao meu portfólio",
+  return {
+    title: t('home'),
+    description: t('description')
+  };
 }
 
 const Home = () => {

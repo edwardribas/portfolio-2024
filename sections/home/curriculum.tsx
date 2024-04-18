@@ -21,7 +21,7 @@ export const Curriculum = () => {
             src="/icons/solar-cloud-download-line-duotone.svg"
             width={24}
             height={24}
-            alt="Símbolo de download"
+            alt={t('download-icon-alt')}
             className="size-6"
           />
           {t('download')}
@@ -30,5 +30,3 @@ export const Curriculum = () => {
     </section>
   )
 }
-
-// todo: translate this page

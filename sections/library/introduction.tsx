@@ -14,7 +14,7 @@ export const Introduction = () => {
           className="size-6"
           width={24}
           height={24}
-          alt="Símbolo de três estrelas sobre uma mão"
+          alt={t('heading-icon-alt')}
         />
       </span>
 
@@ -26,14 +26,14 @@ export const Introduction = () => {
         {t('description')}
       </p>
 
-      <Button asChild aria-label="Enviar um e-mail para mim">
+      <Button asChild aria-label={t('contact-button-alt')}>
         <Link href="mailto:ribasdois@gmail.com">
           <Image
             src="/icons/solar-mailbox-line-duotone.svg"
             className="size-6"
             width={24}
             height={24}
-            alt="Símbolo de caixa postal"
+            alt={t('mailbox-icon-alt')}
           />
           {t('buttonContent')}
         </Link>
@@ -41,5 +41,3 @@ export const Introduction = () => {
     </section>
   )
 }
-
-// todo: translate this page

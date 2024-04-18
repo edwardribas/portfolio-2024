@@ -91,5 +91,3 @@ export const Project = ({
 
 // todo: translate elements in this page
 // todo: change img to Image
-// also verify if it's worth to put the container as another component
-// columns-2 gap-6 space-y-6

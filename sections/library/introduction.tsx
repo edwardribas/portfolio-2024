@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
+import { useTranslations } from "next-intl"
 
 export const Introduction = () => {
+  const t = useTranslations('Library')
+
   return (
     <section className="space-y-5 text-center">
       <span className="bg-p-muted-border mx-auto grid size-[50px] place-items-center rounded-[22px]">
@@ -16,13 +19,11 @@ export const Introduction = () => {
       </span>
 
       <h1 className="text-p-foreground text-2xl font-semibold leading-[normal]">
-        Ferramentas e projetos
+        {t('title')}
       </h1>
 
       <p className="text-p-muted-foreground text-[15px] leading-6">
-        Atuo majoritariamente utilizando tecnologias como React, NextJS e
-        TailwindCSS. Utilizo o Figma para realizar a prototipação de meus
-        projetos. Torne a sua ideia realidade hoje mesmo!
+        {t('description')}
       </p>
 
       <Button asChild aria-label="Enviar um e-mail para mim">
@@ -34,7 +35,7 @@ export const Introduction = () => {
             height={24}
             alt="Símbolo de caixa postal"
           />
-          Fale comigo
+          {t('buttonContent')}
         </Link>
       </Button>
     </section>

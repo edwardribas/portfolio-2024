@@ -1,19 +1,45 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useTransition } from "react"
 import { Button } from "./ui/button"
 import Image from "next/image"
 import { AnimatePresence, motion } from "framer-motion"
 import { LanguageOption } from "./language-option"
 import { cn } from "@/lib/utils"
+import { usePathname, useRouter } from "@/navigation"
+import { useParams } from "next/navigation"
 
 export const LanguageSwitch = () => {
+  const params = useParams()
+  const pathname = usePathname()
+  const router = useRouter()
+
   const [isSwitchOpen, setIsSwitchOpen] = useState(false)
-  const [selectedLang, setSelectedLang] = useState("pt")
+  const [pending, startTransition] = useTransition()
 
   const handleSwitchClick = () => {
     setIsSwitchOpen((prev) => !prev)
   }
+
+  const handleSwitchLanguage = (nextLang: string) => {
+    startTransition(() => {
+      router.replace(
+        // @ts-expect-error -- TypeScript will validate that only known `params`
+        // are used in combination with a given `pathname`. Since the two will
+        // always match for the current route, we can skip runtime checks.
+        { pathname, params },
+        { locale: nextLang }
+      );
+    })
+  }
+
+  // useEffect(() => {
+  //   startTransition(() => {
+  //     router.replace(
+  //       pathname
+  //     )
+  //   })
+  // }, [selectedLang])
 
   return (
     <div className="bg-p-background relative flex flex-col">
@@ -26,16 +52,19 @@ export const LanguageSwitch = () => {
             className="border-p-border absolute bottom-full flex w-[60px] flex-col gap-1 rounded-[26px] border p-2"
           >
             <LanguageOption
-              active={selectedLang === "pt"}
+              disabled={pending}
+              active={params.locale === "pt"}
               alt="Alterar idioma para português"
               label="PT"
-              onClick={() => setSelectedLang("pt")}
+              onClick={() => !pending && handleSwitchLanguage("pt")}
             />
+
             <LanguageOption
-              active={selectedLang === "en"}
+              disabled={pending}
+              active={params.locale === "en"}
               alt="Alterar idioma para inglês"
               label="EN"
-              onClick={() => setSelectedLang("en")}
+              onClick={() => !pending && handleSwitchLanguage("en")}
             />
           </motion.div>
         )}
@@ -43,6 +72,7 @@ export const LanguageSwitch = () => {
 
       <Button
         onClick={handleSwitchClick}
+        aria-label="Abrir o menu de seleção de idioma"
         aria-selected={isSwitchOpen}
         className={cn(
           "border-p-border grid size-[60px] place-items-center rounded-[26px] bg-transparent p-[5px] transition-colors duration-300 ease-in-out",

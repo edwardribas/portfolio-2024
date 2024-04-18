@@ -18,13 +18,15 @@ export const metadata: Metadata = {
   description: "Bem-vindo ao meu portfólio",
 }
 
-export default function RootLayout({
+export default function LocaleLayout({
   children,
+  params: { locale },
 }: Readonly<{
   children: React.ReactNode
+  params: { locale: string }
 }>) {
   return (
-    <html lang="pt-br">
+    <html lang={locale}>
       <body
         className={cn(
           "bg-p-background text-p-foreground h-full min-h-dvh",
@@ -53,5 +55,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-// todo: adjust layout

@@ -5,6 +5,7 @@ export type MenuLinkProps = {
   tooltip: string
   tooltipDirection?: "right" | "left"
   alt: string
-} & LinkProps &
-  ChildrenProps &
+  href: string
+  target?: "_blank" | "_self"
+} & ChildrenProps &
   OptionalClassProps

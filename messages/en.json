@@ -1,0 +1,15 @@
+{
+  "Home": {
+    "title": "Hey there! I am",
+    "description": "Web developer from São Paulo, Brazil, with over 2 years of experience creating elegant interfaces focused on user experience and usability.",
+    "download": "Download resume",
+    "aboutTitle": "Who is Eduardo Ribas?",
+    "aboutTextParagraph1": "I am a professional passionate about delivering accessible and functional experiences for all types of users, recognizing the importance of communication in product development. With over 2 years of experience, I have the ability to turn your prototypes into reality with the utmost fidelity.",
+    "aboutTextParagraph2": "Since 2022, I have been striving to enhance my skills in both design and development. I frequently use Figma to sketch and replicate designs, and technologies such as React, NextJS, Tailwind CSS, C#, Prisma ORM, PlanetScale, and Cloudinary to bring these projects to life."
+  },
+  "Library": {
+    "title": "Projects and technologies",
+    "description": "I primarily work with technologies such as React, NextJS, and TailwindCSS. I use Figma for prototyping my projects. Turn your idea into reality today!",
+    "buttonContent": "Contact me"
+  }
+}

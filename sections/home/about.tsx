@@ -22,5 +22,3 @@ export const About = () => {
     </section>
   )
 }
-
-// todo: translate this page

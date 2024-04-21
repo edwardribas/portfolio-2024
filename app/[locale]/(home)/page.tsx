@@ -14,11 +14,12 @@ export const generateMetadata = async ({ params: { locale } }: { params: { local
   };
 }
 
-const Home = () => {
+const Home = ({ params: { locale }}: { params: { locale: string }}) => {
+
   return (
     <PageAnimation className="space-y-[110px]">
       <Hero />
-      <Curriculum />
+      <Curriculum locale={locale} />
       <About />
     </PageAnimation>
   )

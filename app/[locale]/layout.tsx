@@ -61,3 +61,5 @@ export default function LocaleLayout({
     </html>
   )
 }
+
+// todo: responsive version

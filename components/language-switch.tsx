@@ -10,7 +10,9 @@ import { usePathname, useRouter } from "@/navigation"
 import { useParams } from "next/navigation"
 import { LanguageSwitchProps } from "@/types/components/language-switch.types"
 
-export const LanguageSwitch = ({ globeAlt, languageSwitchButtonAlt, switchToEnglishAlt, switchToPortugueseAlt, }: LanguageSwitchProps) => {
+export const LanguageSwitch = ({ translations }: LanguageSwitchProps) => {
+  const { globeAlt, languageSwitchButtonAlt, switchToEnglishAlt, switchToPortugueseAlt } = translations
+
   const params = useParams()
   const pathname = usePathname()
   const router = useRouter()
@@ -66,7 +68,6 @@ export const LanguageSwitch = ({ globeAlt, languageSwitchButtonAlt, switchToEngl
       <Button
         onClick={handleSwitchClick}
         aria-label={languageSwitchButtonAlt}
-        aria-selected={isSwitchOpen}
         className={cn(
           "border-p-border grid size-[60px] place-items-center rounded-[26px] bg-transparent p-[5px] transition-colors duration-300 ease-in-out",
           { "bg-p-border": isSwitchOpen, "hover:bg-p-border/40": !isSwitchOpen }

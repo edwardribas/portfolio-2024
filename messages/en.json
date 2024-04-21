@@ -44,6 +44,7 @@
 
   "Header": {
     "suitcase-icon-alt": "Suitcase icon",
-    "time-label": "Local time (SP, Brazil)"
+    "time-label": "Local time (SP, Brazil)",
+    "current-company-alt": "Company I'm currently working at"
   }
 }

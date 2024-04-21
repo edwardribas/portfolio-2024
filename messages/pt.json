@@ -44,6 +44,7 @@
 
   "Header": {
     "suitcase-icon-alt": "Símbolo de maleta de trabalho",
-    "time-label": "Horário local (SP, Brasil)"
+    "time-label": "Horário local (SP, Brasil)",
+    "current-company-alt": "Empresa na qual eu trabalho atualmente"
   }
 }

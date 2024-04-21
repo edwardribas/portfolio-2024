@@ -8,7 +8,7 @@ export const Header = () => {
   return (
     <header className="border-p-border mb-[110px] border-b pb-10 pt-[50px] ">
       <div className="mx-auto flex w-full max-w-[980px] items-center justify-between px-[60px]">
-        <div className="border-p-border flex items-center gap-2.5 rounded-[18px] border px-4 py-3">
+        <div aria-labelledby="company" className="border-p-border flex items-center gap-2.5 rounded-[18px] border px-4 py-3">
           <Image
             src="/icons/solar-suitcase-line-duotone.svg"
             width={24}
@@ -17,7 +17,7 @@ export const Header = () => {
             alt={t('suitcase-icon-alt')}
           />
 
-          <p className="text-p-foreground text-sm leading-[normal]">
+          <p id="company" aria-label={t('current-company-alt')} className="text-p-foreground text-sm leading-[normal]">
             Tecnologia Única
           </p>
         </div>

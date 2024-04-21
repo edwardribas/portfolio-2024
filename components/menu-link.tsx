@@ -1,15 +1,15 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import { useParams, usePathname } from "next/navigation"
+import type { MenuLinkProps } from "@/types/components/menu-link.types"
+import { Link, usePathname } from "@/navigation"
+
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "./ui/tooltip"
-import type { MenuLinkProps } from "@/types/components/menu-link.types"
-import { Link } from "@/navigation"
 
 export const MenuLink = ({
   children,
@@ -21,8 +21,7 @@ export const MenuLink = ({
   target = "_self"
 }: MenuLinkProps) => {
   const pathname = usePathname()
-  const { locale } = useParams()
-  const selected = pathname === `/${locale}${href}`
+  const selected = pathname === href
 
   return (
     <TooltipProvider>

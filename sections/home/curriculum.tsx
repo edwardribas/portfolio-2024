@@ -1,11 +1,15 @@
 import { Divider } from "@/components/divider"
 import { Button } from "@/components/ui/button"
+import { CurriculumProps } from "@/types/sections/home/curriculum.types"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
 import Link from "next/link"
 
-export const Curriculum = () => {
+export const Curriculum = ({ locale }: CurriculumProps) => {
   const t = useTranslations("Home")
+  const curriculumDownloadLink = locale === 'pt'
+    ? "/documents/curriculum-ribas.pdf"
+    : "/documents/curriculum-ribas-english.pdf"
 
   return (
     <section className="text-p-muted-foreground flex flex-col text-[15px]">
@@ -14,7 +18,7 @@ export const Curriculum = () => {
       <Button asChild className="-mt-8 self-center">
         <Link
           prefetch={false}
-          href="/documents/curriculum-ribas.pdf"
+          href={curriculumDownloadLink}
           target="_blank"
         >
           <Image
@@ -30,3 +34,5 @@ export const Curriculum = () => {
     </section>
   )
 }
+
+// todo:

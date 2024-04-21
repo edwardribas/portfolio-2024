@@ -44,13 +44,13 @@ export const LeftBar = ({ className }: OptionalClassProps) => {
       </nav>
 
       <LanguageSwitch
-        globeAlt={t('global-icon-alt')}
-        languageSwitchButtonAlt={t('locale-alt')}
-        switchToEnglishAlt={t('switch-to-en')}
-        switchToPortugueseAlt={t('switch-to-pt')}
+        translations={{
+          globeAlt: t('global-icon-alt'),
+          languageSwitchButtonAlt: t('locale-alt'),
+          switchToEnglishAlt: t('switch-to-en'),
+          switchToPortugueseAlt: t('switch-to-pt')
+        }}
       />
     </aside>
   )
 }
-
-// todo: translate this page

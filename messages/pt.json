@@ -15,7 +15,14 @@
     "buttonContent": "Fale comigo",
     "heading-icon-alt": "Símbolo de três estrelas sobre uma mão",
     "mailbox-icon-alt": "Símbolo de uma caixa postal",
-    "contact-button-alt": "Enviar um e-mail para mim"
+    "contact-button-alt": "Enviar um e-mail para mim",
+    "pin-icone-alt": "Símbolo de pino",
+    "highlight-title": "Destaque",
+    "no-projects": "Sem projetos publicados ainda",
+    "collapse-open": "Abrir detalhes do projeto",
+    "collapse-close": "Fechar detalhes do projeto",
+    "collapse-arrow-up": "Seta virada para cima",
+    "collapse-arrow-down": "Seta virada para baixo"
   },
 
   "Metadata": {
@@ -35,7 +42,13 @@
     "locale-alt": "Mudar idioma",
     "switch-to-pt": "Alterar idioma para português",
     "switch-to-en": "Alterar idioma para inglês",
-    "global-icon-alt": "Símbolo de um globo"
+    "global-icon-alt": "Símbolo de um globo",
+    "instagram-alt": "Acessar minha página no Instagram",
+    "github-alt": "Acessar minha página no Github",
+    "linkedin-alt": "Acessar minha página no LinkedIn",
+    "discord-alt": "Copiar meu nome de usuário do Discord",
+    "discord-copied-title": "Copiado para a área de transferência!",
+    "discord-copied-description": "Busque esse usuário no Discord para me contatar!"
   },
 
   "Footer": {

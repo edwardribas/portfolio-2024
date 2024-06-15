@@ -5,7 +5,10 @@ const withNextIntl = createNextIntlPlugin()
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [{ hostname: "placehold.co" }],
+    remotePatterns: [
+      { hostname: "placehold.co" },
+      { hostname: "ik.imagekit.io" },
+    ],
   },
 }
 

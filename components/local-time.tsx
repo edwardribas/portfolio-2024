@@ -1,18 +1,19 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { Skeleton } from "./ui/skeleton"
 
 const TIME_UPDATE_SECONDS_COUNTDOWN = 5
 
 export const LocalTime = () => {
-  const [localTime, setLocalTime] = useState("00:00 AM")
+  const [localTime, setLocalTime] = useState<string | null>(null)
 
   useEffect(() => {
     const newTime = new Date().toLocaleTimeString("pt-br", {
       timeZone: "America/Sao_Paulo",
       hour: "2-digit",
       minute: "2-digit",
-      hour12: true,
+      hour12: false,
     })
 
     setLocalTime(newTime)
@@ -25,6 +26,14 @@ export const LocalTime = () => {
   }, [])
 
   return (
-    <>{localTime}</>
+    <>
+      {localTime === null ? (
+        <Skeleton className="h-[20px] w-[32.5px] rounded-full" />
+      ) : (
+        <p className="text-p-foreground text-sm font-bold">
+          {localTime}
+        </p>
+      )}
+    </>
   )
 }

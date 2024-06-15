@@ -6,34 +6,45 @@ import { Divider } from "./divider"
 import type { ProjectProps } from "@/types/components/project.types"
 import { AnimatePresence, motion } from "framer-motion"
 import Image from "next/image"
+import { Button } from "./ui/button"
+import Link from "next/link"
 
 export const Project = ({
   description,
-  image,
+  created_year,
+  demo_url,
+  image_url,
+  repository_url,
   title,
-  year,
   className,
+  collapseAriaLabel
 }: ProjectProps) => {
   const [isDescriptionCollapsed, setIsDescriptionCollapsed] = useState(true)
 
+  const buttonProps = {
+    tabIndex: isDescriptionCollapsed ? -1 : 0,
+    role: isDescriptionCollapsed ? "generic" : "button",
+  }
+
   return (
-    <article
-      onClick={() => setIsDescriptionCollapsed((old) => !old)}
-      aria-label={
-        isDescriptionCollapsed
-          ? "Abrir descrição do projeto"
-          : "Fechar descrição do projeto"
-      }
+    <div
       className={cn(
-        "bg-p-project-background hover:bg-p-project-background/60 active:bg-p-project-background flex cursor-pointer select-none break-inside-avoid flex-col items-center justify-between space-y-5 rounded-[40px] px-[35px] py-[30px] transition-colors duration-300 ease-in-out",
+        "bg-p-project-background flex h-max min-w-[300px] flex-1 flex-col items-center justify-between space-y-8 rounded-b-[40px] rounded-t-[30px] p-[30px] text-left transition-colors duration-300 ease-in-out",
         className
       )}
     >
       <header className="flex w-full items-center justify-between gap-3">
         <h1 className="font-medium">{title}</h1>
 
-        <div className="flex items-center gap-3">
-          <p className="text-p-muted-foreground text-[15px]">Desde {year}</p>
+        <button
+          className="flex items-center gap-3"
+          onClick={() => setIsDescriptionCollapsed((old) => !old)}
+          aria-label={isDescriptionCollapsed
+            ? collapseAriaLabel.open
+            : collapseAriaLabel.close
+          }
+        >
+          <p className="text-p-muted-foreground text-[15px]">Desde {created_year}</p>
 
           <Image
             src="/icons/solar-round-alt-arrow-down-broken.svg"
@@ -45,11 +56,11 @@ export const Project = ({
             )}
             alt={
               isDescriptionCollapsed
-                ? "Seta virada para baixo"
-                : "Seta virada para cima"
+                ? collapseAriaLabel.arrow.down
+                : collapseAriaLabel.arrow.up
             }
           />
-        </div>
+        </button>
       </header>
 
       <AnimatePresence>
@@ -60,34 +71,52 @@ export const Project = ({
           }}
           initial="initial"
           exit={{ height: 0 }}
-          className="overflow-hidden"
-          transition={{ duration: 0.25 }}
+          className="flex w-full overflow-hidden"
+          transition={{ duration: 0.6, type: 'spring', bounce: 0.35 }}
           animate={isDescriptionCollapsed ? "initial" : "animate"}
           aria-hidden={isDescriptionCollapsed}
         >
-          <p
-            className={cn(
-              "text-muted-foreground w-full overflow-y-hidden leading-[24px] opacity-100 transition-all duration-300 ease-in-out"
+          <div className="flex flex-col gap-3 overflow-y-hidden">
+            <p
+              className={cn(
+                "text-muted-foreground w-full text-left leading-[24px] opacity-100 transition-all duration-300 ease-in-out"
+              )}
+            >
+              {description}
+            </p>
+
+            {(repository_url || demo_url) && (
+              <div className="flex flex-wrap items-center gap-2">
+                {repository_url && (
+                  <Button asChild className="bg-p-project-background select-none">
+                    <Link href={repository_url} target="_blank" {...buttonProps}>
+                      Github
+                    </Link>
+                  </Button>
+                )}
+
+                {demo_url && (
+                  <Button asChild className="bg-p-project-background select-none">
+                    <Link href={demo_url} target="_blank" {...buttonProps}>
+                      Demo
+                    </Link>
+                  </Button>
+                )}
+              </div>
             )}
-          >
-            {description}
-          </p>
+          </div>
         </motion.div>
       </AnimatePresence>
 
       <Divider />
 
-      {/* eslint-disable-next-line @next/next/no-img-element */}
       <Image
-        src={image}
+        src={image_url}
         alt={title}
         width={347}
         height={195}
-        className="max-h-[350px] w-full rounded-[38px] object-cover"
+        className="max-h-[250px] w-full rounded-[30px] object-cover"
       />
-    </article>
+    </div>
   )
 }
-
-// todo: translate elements in this page
-// todo: change img to Image

@@ -11,6 +11,7 @@ import { Header } from "@/components/header"
 import { LeftBar } from "@/components/leftbar"
 import { RightBar } from "@/components/rightbar"
 import { getTranslations } from "next-intl/server"
+import { Toaster } from "@/components/ui/sonner"
 
 export const generateMetadata = async ({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> => {
   const t = await getTranslations({ locale, namespace: 'Metadata' });
@@ -55,6 +56,7 @@ export default function LocaleLayout({
           <RightBar />
         </div>
 
+        <Toaster />
         <SpeedInsights />
         <Analytics />
       </body>

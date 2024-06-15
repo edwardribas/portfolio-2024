@@ -2,8 +2,12 @@ import Image from "next/image"
 import { MenuLink } from "./menu-link"
 import { OptionalClassProps } from "@/types/utils.types"
 import { cn } from "@/lib/utils"
+import { useTranslations } from "next-intl"
+import { DiscordMenuLink } from "./discord-menu-link"
 
 export const RightBar = ({ className }: OptionalClassProps) => {
+  const t = useTranslations('Sidebar')
+
   return (
     <aside
       className={cn(
@@ -14,7 +18,7 @@ export const RightBar = ({ className }: OptionalClassProps) => {
       <nav className="flex flex-col gap-6">
         <MenuLink
           href="https://www.instagram.com/edwardb.as/"
-          alt="Acessar meu perfil no Instagram"
+          alt={t('instagram-alt')}
           tooltip="Instagram"
           tooltipDirection="left"
         >
@@ -23,13 +27,13 @@ export const RightBar = ({ className }: OptionalClassProps) => {
             className="size-6"
             width={24}
             height={24}
-            alt="Logo do Instagram"
+            alt="Logo Instagram"
           />
         </MenuLink>
 
         <MenuLink
           href="https://github.com/edwardribas/"
-          alt="Acessar meu perfil no Github"
+          alt={t('github-alt')}
           tooltipDirection="left"
           tooltip="Github"
         >
@@ -38,13 +42,13 @@ export const RightBar = ({ className }: OptionalClassProps) => {
             className="size-6"
             width={24}
             height={24}
-            alt="Logo do Github"
+            alt="Logo Github"
           />
         </MenuLink>
 
         <MenuLink
           href="https://www.instagram.com/edwardb.as/"
-          alt="Acessar meu perfil no LinkedIn"
+          alt={t('linkedin-alt')}
           tooltip="LinkedIn"
           tooltipDirection="left"
         >
@@ -53,9 +57,15 @@ export const RightBar = ({ className }: OptionalClassProps) => {
             width={24}
             className="size-6"
             height={24}
-            alt="Logo do LinkedIn"
+            alt="Logo LinkedIn"
           />
         </MenuLink>
+
+        <DiscordMenuLink
+          alt={t('discord-alt')}
+          toastTitle={t('discord-copied-title')}
+          toastDescription={t('discord-copied-description')}
+        />
       </nav>
     </aside>
   )

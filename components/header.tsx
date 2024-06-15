@@ -26,9 +26,8 @@ export const Header = () => {
           <p className="text-p-muted-foreground text-sm">
             {t('time-label')}
           </p>
-          <p className="text-p-foreground text-sm font-bold">
-            <LocalTime />
-          </p>
+          
+          <LocalTime />
         </div>
       </div>
     </header>

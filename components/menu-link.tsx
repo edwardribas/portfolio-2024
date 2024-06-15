@@ -1,6 +1,5 @@
 "use client"
 
-import { cn } from "@/lib/utils"
 import type { MenuLinkProps } from "@/types/components/menu-link.types"
 import { Link, usePathname } from "@/navigation"
 
@@ -11,6 +10,18 @@ import {
   TooltipTrigger,
 } from "./ui/tooltip"
 
+import { tv } from "tailwind-variants"
+
+const item = tv({
+  base: "grid size-[60px] place-items-center rounded-[26px] bg-transparent p-[5px] transition-colors duration-300 ease-in-out",
+  variants: {
+    selected: {
+      true: "bg-p-muted-border",
+      false: "hover:bg-p-muted-border/80",
+    }
+  },
+})
+
 export const MenuLink = ({
   children,
   className,
@@ -18,7 +29,8 @@ export const MenuLink = ({
   alt,
   tooltipDirection = "right",
   href,
-  target = "_self"
+  target = "_self",
+  onClick,
 }: MenuLinkProps) => {
   const pathname = usePathname()
   const selected = pathname === href
@@ -27,20 +39,24 @@ export const MenuLink = ({
     <TooltipProvider>
       <Tooltip delayDuration={0} disableHoverableContent>
         <TooltipTrigger asChild aria-label={alt}>
-          <Link
-            className={cn(
-              " grid size-[60px] place-items-center rounded-[26px] bg-transparent p-[5px] transition-colors duration-300 ease-in-out",
-              {
-                "bg-p-muted-border": selected,
-                "hover:bg-p-muted-border/80": !selected,
-              },
-              className
+          {onClick
+            ? (
+              <button
+                onClick={onClick}
+                className={item({ selected, className })}
+              >
+                {children}
+              </button>
+            )
+            : (
+              <Link
+                className={item({ selected, className })}
+                href={href as "/" | "/library"}
+                target={target}
+              >
+                {children}
+              </Link>
             )}
-            href={href as "/" | "/library"}
-            target={target}
-          >
-            {children}
-          </Link>
         </TooltipTrigger>
         <TooltipContent sideOffset={12} side={tooltipDirection}>
           {tooltip}

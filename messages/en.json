@@ -15,7 +15,14 @@
     "buttonContent": "Contact me",
     "heading-icon-alt": "Tree stars over a hand",
     "mailbox-icon-alt": "Mailbox icon",
-    "contact-button-alt": "Send a message to my e-mail"
+    "contact-button-alt": "Send a message to my e-mail",
+    "pin-icone-alt": "Pin icon",
+    "highlight-title": "Highlighted",
+    "no-projects": "No projects published yet",
+    "collapse-open": "Open the project details",
+    "collapse-close": "Close the project details",
+    "collapse-arrow-up": "Arrow up",
+    "collapse-arrow-down": "Arrow down"
   },
 
   "Metadata": {
@@ -35,7 +42,13 @@
     "locale-alt": "Change locale",
     "switch-to-pt": "Switch locale to Portuguese",
     "switch-to-en": "Switch locale to English",
-    "global-icon-alt": "Globe icon"
+    "global-icon-alt": "Globe icon",
+    "instagram-alt": "Access my Instagram profile",
+    "github-alt": "Access my Github profile",
+    "linkedin-alt": "Access my LinkedIn profile",
+    "discord-alt": "Copy my Discord username",
+    "discord-copied-title": "Copied to clipboard!",
+    "discord-copied-description": "Search for this user on Discord to contact me!"
   },
 
   "Footer": {
